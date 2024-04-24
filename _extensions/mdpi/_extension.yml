@@ -9,6 +9,7 @@ contributes:
       filters:
         - mdpi.lua
     pdf:
+      cite-method: natbib
       include-in-header: 
         - header.tex
       template: "template_mdpicompat.tex"
@@ -21,4 +22,6 @@ contributes:
         - "partials/doc-class.tex"
         - "partials/title.tex"
         - "partials/before-body.tex"
+        - "partials/before-bib.tex"
+        - "partials/after-body.tex"
 
