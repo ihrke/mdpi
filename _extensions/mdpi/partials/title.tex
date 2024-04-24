@@ -1,0 +1,101 @@
+\firstpage{1} 
+\makeatletter 
+\setcounter{page}{\@firstpage} 
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{$if(year)$$year$$else$\the\year{}$endif$}
+\copyrightyear{$if(year)$$year$$else$\the\year{}$endif$}
+%\externaleditor{Academic Editor: Firstname Lastname}
+\datereceived{ } 
+\daterevised{ } % Comment out if no revised date
+\dateaccepted{ } 
+\datepublished{ } 
+%\datecorrected{} % For corrected papers: "Corrected: XXX" date in the original paper.
+%\dateretracted{} % For corrected papers: "Retracted: XXX" date in the original paper.
+\hreflink{https://doi.org/} % If needed use \linebreak
+%\doinum{}
+%\pdfoutput=1 % Uncommented for upload to arXiv.org
+%\CorrStatement{yes}  % For updates
+
+\Title{$if(title)$ $title$ $endif$}
+
+% MDPI internal command: Title for citation in the left column
+\TitleCitation{$if(runningtitle)$ $runningtitle$ $else$ $title$ $endif$}
+
+
+
+% Author Orchid ID: enter ID or remove command
+%\newcommand{\orcidauthorA}{0000-0000-0000-000X} % Add \orcidA{} behind the author's name
+%\newcommand{\orcidauthorB}{0000-0000-0000-000X} % Add \orcidB{} behind the author's name
+$for(by-author/pairs)$
+$if(it.value.orcid)$
+\newcommand{\orcidauthor$it.key/alpha/uppercase$}{$it.value.orcid$} 
+$endif$
+$endfor$
+
+
+% Authors, for the paper (add full first names)
+%\Author{Firstname Lastname $$^{1,\dagger,\ddagger}$$\orcidA{}, Firstname Lastname $$^{2,\ddagger}$$ and Firstname Lastname $$^{2,}$$*}
+
+\Author{$if(by-author/allbutlast)$
+$for(by-author/allbutlast/pairs)$
+$it.value.name.literal$$$^{$for(it.value.affiliations)$$it.id$$sep$,$endfor$}$$$if(it.value.orcid)$\orcid$it.key/alpha/uppercase${}$endif$$sep$, 
+$endfor$
+~and~$for(by-author/last)$$it.name.literal$$$^{$for(it.affiliations)$$it.id$$sep$,$endfor$}$$$if(it.orcid)$\orcid${ author/length/alpha/uppercase }{}$endif$$endfor$
+$else$
+${ by-author.name.literal } $if(by-author.orcid)$$$^{$for(by-author.affiliations)$$it.id$$sep$,$endfor$}$$\orcidA{}$endif$
+$endif$}
+%\longauthorlist{yes}
+
+% MDPI internal command: Authors, for metadata in PDF
+\AuthorNames{
+$for(by-author)$
+  $by-author.name.literal$$sep$,
+$endfor$
+}
+
+% MDPI internal command: Authors, for citation in the left column
+%\AuthorCitation{Lastname, F.; Lastname, F.; Lastname, F.}
+%\usepackage{xstring}
+\newcommand\getfirst[1]{\getfirstaux#1\relax} \def\getfirstaux#1#2\relax{#1}
+\newcommand{\authorformatted}{$for(by-author)$$by-author.name.family$, \getfirst{$by-author.name.given$}.$sep$; $endfor$}
+\AuthorCitation{\authorformatted}
+
+% If this is a Chicago style journal: Lastname, Firstname, Firstname Lastname, and Firstname Lastname.
+
+% Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
+\address$if(by-affiliation/allbutlast)$ $else$[1]$endif${%
+$for(by-affiliation)$
+$$^{${it.id}}$$ \quad $it.department$, $it.name$\\
+$endfor$}
+
+%\address{
+%$$^{1}$$ \quad Affiliation 1; e-mail@e-mail.com\\
+%$$^{2}$$ \quad Affiliation 2; e-mail@e-mail.com}
+
+% Contact information of the corresponding author
+%% see: https://quarto.org/docs/journals/authors.html
+$for(by-author)$
+$if(it.attributes.corresponding)$
+\corres{Correspondence: $it.email$}
+$endif$
+$endfor$
+
+% Current address and/or shared authorship
+%\firstnote{Current address: Affiliation.}  % Current address should not be the same as any items in the Affiliation section.
+%\secondnote{These authors contributed equally to this work.}
+% The commands \thirdnote{} till \eighthnote{} are available for further notes
+
+%\simplesumm{} % Simple summary
+
+%\conference{} % An extended version of a conference paper
+
+% Abstract (Do not insert blank lines, i.e. \\) 
+\abstract{$if(abstract)$ $abstract$ $endif$}
+
+% Keywords
+$if(keywords)$
+\keyword{$for(keywords)$$keywords$$sep$; $endfor$}
+$endif$

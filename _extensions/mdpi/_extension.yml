@@ -1,0 +1,24 @@
+title: Mdpi
+author: Matthias Mittner
+version: 1.0.0
+quarto-required: ">=1.4.0"
+contributes:
+  formats:
+    common:
+      toc: false
+      filters:
+        - mdpi.lua
+    pdf:
+      include-in-header: 
+        - header.tex
+      template: "template_mdpicompat.tex"
+      format-resources:
+        - chicago2.bst
+        - mdpi.bst
+        - mdpi.cls
+        - journalnames.tex
+      template-partials:
+        - "partials/doc-class.tex"
+        - "partials/title.tex"
+        - "partials/before-body.tex"
+

@@ -1,0 +1,24 @@
+\documentclass[
+$if(mdpi_journal)$
+    $mdpi_journal$,
+$else$
+    journal,
+$endif$
+$if(article_type)$
+    $article_type$,
+$else$
+    article,
+$endif$
+$if(article_status)$
+    $article_status$,
+$else$
+    submit,
+$endif$
+$if(fontsize)$
+  $fontsize$,
+$endif$
+$for(classoption)$
+  $classoption$$sep$,
+$endfor$
+moreauthors
+]{mdpi}

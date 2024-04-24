@@ -1,0 +1,100 @@
+---
+title: Mdpi Template
+runningtitle: MDPI-quarto
+format:
+  mdpi-pdf:
+    keep-tex: true
+mdpi_journal: behavsci
+article_type: article
+article_status: submit
+author:
+  - name: Mehmet Mehmetoglu
+    corresponding: true
+    orcid: 0000-0002-6092-8551
+    email: mehmet.mehmetoglu@ntnu.no
+    affiliations:
+      - name: "Norwegian University of Science and Technology"
+        department: Institute for Psychology
+        id: 1
+        address: 1 Edvards Bull veg
+        postal-code: 7049
+        city: Trondheim
+        country: Norway
+  - name: Ilmari Määttänen
+    orcid: 0000-0003-3149-6099
+    affiliations:
+      - name: University of Helsinki
+        id: 2
+        department: Department of Psychology and Logopedics
+        city: Helsinki
+        country: Finland
+  - name: Matthias Mittner
+    orcid: 0000-0003-0205-7353
+    affiliations:
+      - ref: 1
+      - name: UiT - The Arctic University of Norway
+        id: 3
+        department: Institute for Psychology
+        city: Tromsø
+        country: Norway
+abstract: |
+  This document is a template demonstrating the Mdpi format.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+keywords: [template, demo]
+bibliography: bibliography.bib  
+---
+
+# Introduction {#sec-intro}
+
+@CameronTrivedi2013 says "jump"!
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+```{r}
+#| label: fig-test
+#| fig-width: 8
+#| fig-height: 4
+#| echo: false
+#| message: false
+#| fig-cap: "This is a test figure"
+library(ggplot2)
+ggplot(mtcars, aes(x=wt, y=mpg)) + 
+  geom_point() + 
+  theme_bw()
+```
+
+I can refer to @fig-test from the text.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Equations work as they should both $f(x) = i\times n + 1$ inline and as block equations:
+$$
+f(x) = \frac{1}{n}\sum_{i=1}^{n} x_i
+$$
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r}
+#| label: tbl-test
+#| echo: false
+#| message: false
+#| tbl-cap: "This is a test table"
+library(gt)
+gt(head(mtcars))
+```
+And refering to the tables works as well, see @tbl-test.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+# References
+
+::: {#refs}
+:::
+
