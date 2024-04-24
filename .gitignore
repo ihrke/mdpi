@@ -4,3 +4,10 @@
 .httr-oauth
 .DS_Store
 *.aux
+*.bst
+*.tex
+*.log
+*.out
+*.cls
+template_files
+template2.pdf
