@@ -1,5 +1,7 @@
 # Quarto template for MDPI journals
 
+![](pics/mdpi_screenshot.png)
+
 ## Creating a New Article
 
 To create a new article using this format:
