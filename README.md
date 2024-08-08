@@ -20,7 +20,7 @@ This will create a new directory with an example document that uses this format.
 To add this format to an existing document:
 
 ```bash
-quarto add ihrke/mdpi
+quarto add https://github.com/ihrke/mdpi
 ```
 
 Then, add the format to your document options:
