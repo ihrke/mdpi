@@ -11,3 +11,4 @@
 *.cls
 template_files
 template2.pdf
+/.luarc.json
