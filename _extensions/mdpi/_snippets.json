@@ -1,0 +1,29 @@
+{
+  "mdpi-pdf format": {
+    "prefix": "format",
+    "body": [
+      "format:",
+      "  mdpi-pdf: default",
+      "mdpi_journal: ${1:behavsci}",
+      "article_type: ${2:article}",
+      "article_status: ${3|submit,accepted|}"
+    ],
+    "description": "Configure MDPI format metadata and target format."
+  },
+  "MDPI disclosure statements": {
+    "prefix": "disclosures",
+    "body": [
+      "fundingstatement: |",
+      "  ${1:Funding statement}",
+      "institutionalreview: |",
+      "  ${2:Institutional review statement}",
+      "informedconsent: |",
+      "  ${3:Informed consent statement}",
+      "dataavailability: |",
+      "  ${4:Data availability statement}",
+      "conflictsofinterest: |",
+      "  ${5:Conflict of interest statement}"
+    ],
+    "description": "Insert common MDPI disclosure metadata fields."
+  }
+}
