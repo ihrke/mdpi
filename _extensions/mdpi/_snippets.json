@@ -1,6 +1,6 @@
 {
   "mdpi-pdf format": {
-    "prefix": "mdpi-format",
+    "prefix": "format",
     "body": [
       "format:",
       "  mdpi-pdf: default",
@@ -11,7 +11,7 @@
     "description": "Configure MDPI format metadata and target format."
   },
   "MDPI disclosure statements": {
-    "prefix": "mdpi-disclosures",
+    "prefix": "disclosures",
     "body": [
       "fundingstatement: |",
       "  ${1:Funding statement}",
